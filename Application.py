@@ -2,6 +2,9 @@ import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
 import Astar
+import DFS
+import BFS
+import Greedy
 
 WINDOW_WIDTH, WINDOW_HEIGHT = 800, 600
 
@@ -49,7 +52,6 @@ def draw():
 #Main loop of the application
 def main():
     run = True
-
     #Adding the agent to the world
     world.set_agent(0,0,lambda maze, start_block, destination_block: Astar.astar(maze=maze,start_point=start_block,destination=destination_block,draw=draw))
     world.set_end_point(5,4)
